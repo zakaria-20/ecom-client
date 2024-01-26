@@ -11,13 +11,13 @@ function NavigationBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">JIT-Bootcamp</Navbar.Brand>
+        <Navbar.Brand href="/">JIT-Bootcamp</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Categories</Nav.Link>
-            <Nav.Link href="#link">Products</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/categories">Categories</Nav.Link>
+            <Nav.Link href="/products">Products</Nav.Link>
             <Form inline>
                 <Row>
                 <Col xs="auto">
@@ -35,12 +35,10 @@ function NavigationBar() {
             
           </Nav>
           <Nav className="ms-auto">
-            <Nav.Link href="#link">Cart</Nav.Link>
+            <Nav.Link href="/cart">Cart</Nav.Link>
             <NavDropdown title="Account" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Log in</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Sign up
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/login">Log in</NavDropdown.Item>
+              <NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
               
             </NavDropdown>
             
