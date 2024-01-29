@@ -7,7 +7,7 @@ function CategoryCard() {
   return (
 
         <Col xxl={3} xl={3} lg={3} md={6} sm={6} xs={6} className="mt-2 mb-2 text-center">
-          <Image src="/assets/category.svg" rounded />
+          <Image src="/assets/category.svg" roundedCircle />
         </Col>
   );
 }

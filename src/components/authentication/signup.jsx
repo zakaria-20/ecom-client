@@ -21,7 +21,7 @@ function SignupForm() {
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control type="password" placeholder="Repeat your password" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" href='/dashboard'>
             Create account
         </Button>
     </Form>
