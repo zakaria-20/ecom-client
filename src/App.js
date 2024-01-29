@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import IndexView from './views';
 import CategoriesView from './views/categories';
 import ProductsView from './views/products';
+import ProductDetail from './views/productdetail'
 import SearchView from './views/search';
 import CartView from './views/cart';
 import LogInView from './views/login';
@@ -22,7 +23,8 @@ function App() {
         <Route  path="/" element={<IndexView />}></Route>
         <Route  path="/categories" element={<CategoriesView />}></Route>
         <Route  path="/products" element={<ProductsView />}></Route>
-        <Route  path="/search" element={<SearchView />}></Route>
+        <Route path="/products/:id" element={<ProductDetail/>}></Route>
+       <Route  path="/search" element={<SearchView />}></Route>
         <Route  path="/cart" element={<CartView />}></Route>
         <Route  path="/login" element={<LogInView />}></Route>
         <Route  path="/signup" element={<SignUpView />}></Route>

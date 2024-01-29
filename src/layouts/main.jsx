@@ -1,6 +1,6 @@
 import React from 'react'
 import {Col, Container, Row} from 'react-bootstrap'
-import NavigationBar from '../components/navigationBar/navBar';
+import NavigationBar from '../components/NavigationBar/navBar';
 
  function MainLayout({children}){
     return (
