@@ -2,6 +2,7 @@ import React from 'react'
 import MainAdminLayout from '../../layouts/administration/main';
 import DashboardAnalytics from '../../components/adminstration/analytics/dashboardAnalytics';
 import LatestOrders from '../../components/adminstration/orders/latestOrder';
+import { Outlet } from 'react-router-dom';
 function AdminIndexView(){
     return (
         <>
@@ -9,6 +10,7 @@ function AdminIndexView(){
             <DashboardAnalytics />
             <LatestOrders />
         </MainAdminLayout>
+        <Outlet />
         </>
     )
 }

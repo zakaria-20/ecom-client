@@ -1,13 +1,15 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+import React, { useContext } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import UserContext from "../../context/UserContext";
 function NavigationBar() {
+  const {user }= useContext(UserContext);
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -19,34 +21,40 @@ function NavigationBar() {
             <Nav.Link href="/categories">Categories</Nav.Link>
             <Nav.Link href="/products">Products</Nav.Link>
             <Form inline>
-                <Row>
+              <Row>
                 <Col xs="auto">
-                    <Form.Control
+                  <Form.Control
                     type="text"
                     placeholder="Search"
                     className=" mr-sm-2"
-                    />
+                  />
                 </Col>
                 <Col xs="auto">
-                    <Button type="submit">Search</Button>
+                  <Button type="submit">Search</Button>
                 </Col>
-                </Row>
+              </Row>
             </Form>
-            
           </Nav>
           <Nav className="ms-auto">
             <Nav.Link href="/cart">Cart</Nav.Link>
-            <NavDropdown title="Account" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/login">Log in</NavDropdown.Item>
-              <NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
-              
+            <NavDropdown
+              title={user ? `${user?.data?.username}` : "Account"}
+              id="basic-nav-dropdown"
+            >
+              {user ? (
+                <NavDropdown.Item href="/logout">Log Out</NavDropdown.Item>
+              ) : (
+                <>
+                  <NavDropdown.Item href="/login">Log in</NavDropdown.Item>
+                  <NavDropdown.Item href="/signup">Sign up</NavDropdown.Item>
+                </>
+              )}
             </NavDropdown>
-            
           </Nav>
-          
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    
   );
 }
 

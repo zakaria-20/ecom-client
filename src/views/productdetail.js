@@ -18,7 +18,7 @@ function Productdetail() {
   return (
     <>
         <h1>Product Detail View </h1>
-        <ProductDetails title={product.title} description={product.description} />
+        <ProductDetails data={product} />
        
     </>
   )
